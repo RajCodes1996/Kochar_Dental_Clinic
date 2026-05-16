@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | MediCare Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 font-sans text-slate-800">
+
+    <!-- Navigation (Consistent with clinic.jpg layout) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <div class="bg-blue-600 p-2 rounded-lg text-white">
+                <i class="fas fa-plus-square text-xl"></i>
+            </div>
+            <span class="text-2xl font-bold tracking-tight text-blue-900">MediCare</span>
+        </div>
+        <div class="hidden lg:flex space-x-8 font-medium text-slate-600">
+            <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+            <a href="gallery.html" class="text-blue-600 border-b-2 border-blue-600">Gallery</a>
+            <a href="doctor.html" class="hover:text-blue-600 transition">Doctors</a>
+            <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+        </div>
+        <a href="index.html"><button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition">
+            Back to Home
+        </button></a>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-blue-900 py-16 text-center text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Medical Facility</h1>
+        <p class="text-blue-200 max-w-2xl mx-auto px-6">Explore our state-of-the-art clinical environment, modern equipment, and dedicated care spaces designed for patient comfort.</p>
+    </header>
+
+
+    <!-- Gallery Filter -->
+    <section class="py-8 px-6">
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="px-6 py-2 rounded-full bg-blue-600 text-white font-semibold">All Photos</button>
+            <!-- <button class="px-6 py-2 rounded-full bg-white text-slate-600 hover:bg-blue-50 transition border border-slate-200">Operation Theater</button>
+            <button class="px-6 py-2 rounded-full bg-white text-slate-600 hover:bg-blue-50 transition border border-slate-200">Patient Rooms</button>
+            <button class="px-6 py-2 rounded-full bg-white text-slate-600 hover:bg-blue-50 transition border border-slate-200">Diagnostics</button> -->
+        </div>
+
+        <!-- Image Grid -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Gallery Item 1 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md bg-white">
+                <img src="/images/d3.jpeg" alt="Consultation Room" class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div>
+                        <p class="text-blue-400 text-sm font-bold uppercase">Clinical Space</p>
+                        <h3 class="text-white text-xl font-bold">Modern Consultation Room</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md bg-white">
+                <img src="/images/d1.jpeg" alt="Laboratory" class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div>
+                        <p class="text-blue-400 text-sm font-bold uppercase">Diagnostics</p>
+                        <h3 class="text-white text-xl font-bold">Advanced Testing Lab</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <!-- <div class="group relative overflow-hidden rounded-2xl shadow-md bg-white">
+                <img src="/images/d2.jpeg" alt="Dental Clinic" class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div>
+                        <p class="text-blue-400 text-sm font-bold uppercase">Dental Care</p>
+                        <h3 class="text-white text-xl font-bold">Orthodontic Center</h3>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Gallery Item 4 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md bg-white lg:col-span-2">
+                <img src="/images/d3.jpeg" alt="Reception" class="w-full h-72 object-cover transform group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div>
+                        <p class="text-blue-400 text-sm font-bold uppercase">Hospitality</p>
+                        <h3 class="text-white text-xl font-bold"></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <!-- <div class="group relative overflow-hidden rounded-2xl shadow-md bg-white">
+                <img src="https://images.unsplash.com/photo-1505751172177-51ad1c9cf97a?auto=format&fit=crop&w=600&q=80" alt="Equipment" class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div>
+                        <p class="text-blue-400 text-sm font-bold uppercase">Technology</p>
+                        <h3 class="text-white text-xl font-bold">Robotic Surgery Suite</h3>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="bg-white border-t border-slate-200 mt-20 py-12 px-6 text-center">
+        <p class="text-slate-500 text-sm">© 2026 Kochar Dental Clinic. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
