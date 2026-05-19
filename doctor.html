@@ -8,20 +8,31 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-slate-50 font-sans text-slate-800">
-
-    <!-- Navigation (Consistent with kioch.jpg) -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-            <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fas fa-plus-square text-xl"></i></div>
-            <span class="text-2xl font-bold tracking-tight text-blue-900">Kochar Dental Clinic</span>
+    <nav class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex items-center justify-between gap-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fas fa-plus-square text-xl"></i></div>
+                    <span class="text-2xl font-bold tracking-tight text-blue-900">Kochar Dental Clinic</span>
+                </a>
+                <div class="hidden lg:flex space-x-8 font-medium text-slate-600">
+                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                    <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                    <a href="doctor.html" class="text-blue-600 border-b-2 border-blue-600">Doctors</a>
+                    <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+                </div>
+                <a href="consult.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 rounded-full font-semibold transition">Book Appointment</a>
+            </div>
+            <div class="lg:hidden mt-4 pt-4 border-t border-slate-200">
+                <div class="grid grid-cols-2 gap-2 text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="px-3 py-2 rounded-lg bg-slate-50 text-center hover:bg-slate-100 transition">Home</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-lg bg-slate-50 text-center hover:bg-slate-100 transition">Gallery</a>
+                    <a href="doctor.html" class="px-3 py-2 rounded-lg bg-blue-50 text-blue-600 text-center">Doctors</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-lg bg-slate-50 text-center hover:bg-slate-100 transition">Contact</a>
+                    <a href="consult.html" class="px-3 py-2 rounded-lg bg-blue-600 text-white text-center col-span-2">Book Appointment</a>
+                </div>
+            </div>
         </div>
-        <div class="hidden lg:flex space-x-8 font-medium text-slate-600">
-            <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-            <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
-            <a href="doctors.html" class="text-blue-600 border-b-2 border-blue-600">Doctors</a>
-            <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
-        </div>
-        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition">Book Now</button>
     </nav>
 
     <header class="bg-blue-900 py-16 text-center text-white">
@@ -34,7 +45,6 @@
             <img src="images/Nemi_Kochar.jpeg" alt="Dr. Nemi Kochar" class="w-full h-80 object-cover">
             <div class="p-6 text-center">
                 <h3 class="text-xl font-bold text-slate-900">Dr. Nemi Kochar</h3>
-                <!-- <p class="text-blue-600 font-semibold mb-4">Senior Dental Surgeon</p> -->
                 <p class="text-slate-500 text-sm mb-6">MDS - 50+ Years Experience</p>
             </div>
         </div>
@@ -43,20 +53,17 @@
             <img src="images/Neha_Kocharr.jpeg" alt="Dr. Neha Kochar" class="w-full h-80 object-cover">
             <div class="p-6 text-center">
                 <h3 class="text-xl font-bold text-slate-900">Dr. Neha Kochar</h3>
-                <!-- <p class="text-blue-600 font-semibold mb-4">Position</p> -->
                 <p class="text-slate-500 text-sm mb-6">BDS-12 Years Experience</p>
             </div>
         </div>
 
         <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition group">
-            <img src="/images/Shobhit_Kochar.jpeg" alt="Dr. Shobhit Kochar" class="w-full h-80 object-cover">
+            <img src="images/Shobhit_Kochar.jpeg" alt="Dr. Shobhit Kochar" class="w-full h-80 object-cover">
             <div class="p-6 text-center">
                 <h3 class="text-xl font-bold text-slate-900">Dr. Shobhit Kochar</h3>
-                <!-- <p class="text-blue-600 font-semibold mb-4">Position</p> -->
                 <p class="text-slate-500 text-sm mb-6">BDS-12 Years Experience</p>
             </div>
         </div>
     </section>
-
 </body>
 </html>

@@ -9,24 +9,38 @@
 </head>
 <body class="bg-slate-50 font-sans text-slate-800">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-            <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fas fa-plus-square text-xl"></i></div>
-            <span class="text-2xl font-bold tracking-tight text-blue-900">Kochar Dental Clinic</span>
+    <nav class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex items-center justify-between gap-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fas fa-plus-square text-xl"></i></div>
+                    <span class="text-2xl font-bold tracking-tight text-blue-900">Kochar Dental Clinic</span>
+                </a>
+                <div class="hidden lg:flex space-x-8 font-medium text-slate-600">
+                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                    <a href="about.html" class="text-blue-600 border-b-2 border-blue-600">About</a>
+                    <a href="services.html" class="hover:text-blue-600 transition">Services</a>
+                    <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                    <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+                </div>
+                <a href="consult.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 rounded-full font-semibold transition">Book Appointment</a>
+            </div>
+            <div class="lg:hidden mt-4 pt-4 border-t border-slate-200">
+                <div class="grid grid-cols-2 gap-2 text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="px-3 py-2 rounded-lg bg-slate-50 text-center hover:bg-slate-100 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg bg-blue-50 text-blue-600 text-center">About</a>
+                    <a href="services.html" class="px-3 py-2 rounded-lg bg-slate-50 text-center hover:bg-slate-100 transition">Services</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-lg bg-slate-50 text-center hover:bg-slate-100 transition">Gallery</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-lg bg-slate-50 text-center hover:bg-slate-100 transition">Contact</a>
+                    <a href="consult.html" class="px-3 py-2 rounded-lg bg-blue-600 text-white text-center col-span-2">Book Appointment</a>
+                </div>
+            </div>
         </div>
-        <div class="hidden lg:flex space-x-8 font-medium text-slate-600">
-            <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-            <a href="about.html" class="text-blue-600 border-b-2 border-blue-600">About</a>
-            <a href="services.html" class="hover:text-blue-600 transition">Services</a>
-            <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
-            <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
-        </div>
-        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition">Book Now</button>
     </nav>
 
     <section class="max-w-7xl mx-auto px-6 py-16 lg:py-24 flex flex-col lg:flex-row items-center gap-16">
         <div class="lg:w-1/2">
-            <img src="images/kochar_dental-clinic.png" alt="Kochar Dental Clinic Exterior" class="rounded-3xl shadow-xl w-full object-cover">
+            <img src="images/kochar_dental_banner.png" alt="Kochar Dental Clinic Exterior" class="rounded-3xl shadow-xl w-full object-cover">
         </div>
         <div class="lg:w-1/2 space-y-6">
             <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Our Story</span>
