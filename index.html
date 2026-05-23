@@ -33,7 +33,7 @@
                 </a>
 
                 <div class="hidden lg:flex items-center gap-8 font-medium text-slate-600">
-                    <a href="index.html" class="text-blue-600 font-bold">Home</a>
+                    <a href="index.html" class="text-blue-600 border-b-2 border-blue-600">Home</a>
                     <a href="services.html" class="hover:text-blue-600 transition">Services</a>
                     <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
                     <a href="about.html" class="hover:text-blue-600 transition">Doctors</a>
@@ -231,19 +231,6 @@
         </div>
     </div>
 
-    <script src="js/index.js"></script>
-    <script>
-        // Mobile Toggle Navigation Script Requirement
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (navToggle && mobileMenu) {
-            navToggle.addEventListener('click', () => {
-                const isHidden = mobileMenu.classList.toggle('hidden');
-                navToggle.setAttribute('aria-expanded', String(!isHidden));
-                const icon = navToggle.querySelector('i');
-                if (icon) icon.className = isHidden ? 'fas fa-bars text-lg' : 'fas fa-times text-lg';
-            });
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
