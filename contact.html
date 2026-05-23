@@ -286,6 +286,7 @@
             btnSpinner.classList.remove('hidden');
             submitBtn.disabled = true;
             errorMsg.classList.add('hidden');
+            errorMsg.textContent = '';
 
             // Use FormData — Web3Forms' recommended approach, works on all mobile browsers
             const formData = new FormData(form);
@@ -301,12 +302,18 @@
                 });
 
                 const data = await response.json();
+                console.log('Web3Forms response:', JSON.stringify(data));
 
-                if (response.ok && data.success) {
+                // data.success comes back as string "true", not boolean true
+                if (response.ok && (data.success === true || data.success === 'true')) {
                     form.classList.add('hidden');
                     successMsg.classList.remove('hidden');
                 } else {
-                    throw new Error(data.message || 'Submission failed');
+                    // Show the exact error message from Web3Forms in the error box
+                    const reason = data.message || data.error || JSON.stringify(data);
+                    document.getElementById('error-msg').innerHTML =
+                        'Submission failed: <strong>' + reason + '</strong><br>Or call us at <strong>+91 9713088897</strong>';
+                    throw new Error(reason);
                 }
             } catch (err) {
                 console.error('Form error:', err);
