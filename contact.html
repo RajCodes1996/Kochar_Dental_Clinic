@@ -129,10 +129,6 @@
 
             <form id="contact-form" class="space-y-4">
 
-                <input type="hidden" name="access_key" value="e91921af-0396-4646-a214-8168745b0262">
-                <input type="hidden" name="subject" value="New Contact Form - Kochar Dental Care">
-                <input type="hidden" name="from_name" value="Kochar Dental Care Website">
-
                 <!-- Full Name -->
                 <div>
                     <label for="name" class="block text-sm font-semibold text-slate-600 mb-2">Full Name</label>
@@ -244,7 +240,22 @@
 
     <script src="js/main.js"></script>
 
+    <!-- EmailJS SDK — works on all devices, no domain restrictions, no activation needed -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
+        // ─── EmailJS Config ────────────────────────────────────────────────────────
+        // To set this up (5 minutes, free):
+        // 1. Go to https://emailjs.com and sign up with Kochardentalcare@gmail.com
+        // 2. Add a Gmail service → copy the Service ID → replace YOUR_SERVICE_ID below
+        // 3. Create an Email Template with these variables: {{from_name}}, {{phone}}, {{from_email}}, {{message}}
+        //    Copy the Template ID → replace YOUR_TEMPLATE_ID below
+        // 4. Go to Account → Public Key → replace YOUR_PUBLIC_KEY below
+        emailjs.init('x5TAPCuqMFG1HMMnu');
+
+        const EMAILJS_SERVICE_ID  = 'service_gwefmko';
+        const EMAILJS_TEMPLATE_ID = 'template_pym2w5l';
+        // ──────────────────────────────────────────────────────────────────────────
+
         const form       = document.getElementById('contact-form');
         const submitBtn  = document.getElementById('submit-btn');
         const btnText    = document.getElementById('btn-text');
@@ -258,16 +269,16 @@
 
         function validate(name, phone, message) {
             let valid = true;
-            showFieldError('name-error',    !name.trim())    && (valid = false);
-            if (!name.trim()) valid = false;
+            if (!name.trim())    { showFieldError('name-error', true);    valid = false; }
+            else                   showFieldError('name-error', false);
 
             const digits = phone.replace(/[\s\-\+\(\)]/g, '');
             const phoneOk = digits.length >= 10 && digits.length <= 15 && /^\d+$/.test(digits);
             showFieldError('phone-error', !phoneOk);
             if (!phoneOk) valid = false;
 
-            showFieldError('message-error', !message.trim());
-            if (!message.trim()) valid = false;
+            if (!message.trim()) { showFieldError('message-error', true);  valid = false; }
+            else                   showFieldError('message-error', false);
 
             return valid;
         }
@@ -286,37 +297,23 @@
             btnSpinner.classList.remove('hidden');
             submitBtn.disabled = true;
             errorMsg.classList.add('hidden');
-            errorMsg.textContent = '';
 
-            // Use FormData — Web3Forms' recommended approach, works on all mobile browsers
-            const formData = new FormData(form);
-            formData.set('name',    name.trim());
-            formData.set('phone',   phone.trim());
-            formData.set('email',   email.trim() || 'Not provided');
-            formData.set('message', message.trim());
+            const templateParams = {
+                from_name:  name.trim(),
+                phone:      phone.trim(),
+                from_email: email.trim() || 'Not provided',
+                message:    message.trim(),
+                to_name:    'Kochar Dental Care'
+            };
 
             try {
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const data = await response.json();
-                console.log('Web3Forms response:', JSON.stringify(data));
-
-                // data.success comes back as string "true", not boolean true
-                if (response.ok && (data.success === true || data.success === 'true')) {
-                    form.classList.add('hidden');
-                    successMsg.classList.remove('hidden');
-                } else {
-                    // Show the exact error message from Web3Forms in the error box
-                    const reason = data.message || data.error || JSON.stringify(data);
-                    document.getElementById('error-msg').innerHTML =
-                        'Submission failed: <strong>' + reason + '</strong><br>Or call us at <strong>+91 9713088897</strong>';
-                    throw new Error(reason);
-                }
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+                // SUCCESS — hide form, show confirmation
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
             } catch (err) {
-                console.error('Form error:', err);
+                console.error('EmailJS error:', err);
+                errorMsg.innerHTML = 'Something went wrong (<strong>' + (err.text || err.message || 'unknown error') + '</strong>). Please call us at <strong>+91 9713088897</strong>.';
                 errorMsg.classList.remove('hidden');
                 btnText.textContent = 'Send Message';
                 btnSpinner.classList.add('hidden');
