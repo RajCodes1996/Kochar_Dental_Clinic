@@ -250,7 +250,9 @@
         // 3. Create an Email Template with these variables: {{from_name}}, {{phone}}, {{from_email}}, {{message}}
         //    Copy the Template ID → replace YOUR_TEMPLATE_ID below
         // 4. Go to Account → Public Key → replace YOUR_PUBLIC_KEY below
-        emailjs.init('XfGrPwgFmkSKceMPz');
+        emailjs.init({
+            publicKey: 'XfGrPwgFmkSKceMPz'
+        });
 
         const EMAILJS_SERVICE_ID  = 'service_983ume9';
         const EMAILJS_TEMPLATE_ID = 'template_xnvg2yo';
